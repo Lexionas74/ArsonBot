@@ -7,12 +7,14 @@ import json
 
 client = commands.Bot(command_prefix='a!', help_command=None, intents=nextcord.Intents.all(), owner_id=("695734833116086303"))
 if os.path.exists(os.getcwd() + "/config.json"):
-    pass
+    with open("./config.json") as f:
+        configData = json.load(f)
 else:
     configTemplate = {"Token": ""}
     with open(os.getcwd() + "/config.json", "w+") as f:
         json.dump(configTemplate, f)
 
+token = configData["Token"]
 @client.event
 async def on_ready():
     print("Bot is ready")
