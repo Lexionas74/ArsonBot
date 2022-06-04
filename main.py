@@ -7,10 +7,13 @@ import json
 
 client = commands.Bot(command_prefix='a!', help_command=None, intents=nextcord.Intents.all(), owner_id=("695734833116086303"))
 if os.path.exists(os.getcwd() + "/config.json"):
+
     with open("./config.json") as f:
         configData = json.load(f)
+
 else:
     configTemplate = {"Token": ""}
+
     with open(os.getcwd() + "/config.json", "w+") as f:
         json.dump(configTemplate, f)
 
@@ -131,4 +134,4 @@ async def unload(ctx, extension):
     client.unload_extension(f"cogs.{extension}")
     await ctx.reply("Unloaded extension!")
 
-client.run("OTUzMDg2OTIwOTAzMjQ1ODI0.G4UsJR.dkUUnXiH39giGkl_0R_CKItK7xlyX1cQ-2XzT8")
+client.run(token)
