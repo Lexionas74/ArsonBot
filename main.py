@@ -2,8 +2,16 @@ import nextcord
 from nextcord.ext import commands
 import difflib
 import os
+import json
+
 
 client = commands.Bot(command_prefix='a!', help_command=None, intents=nextcord.Intents.all(), owner_id=("695734833116086303"))
+if os.path.exists(os.getcwd() + "/config.json"):
+    pass
+else:
+    configTemplate = {"Token": ""}
+    with open(os.getcwd() + "/config.json", "w+") as f:
+        json.dump(configTemplate, f)
 
 @client.event
 async def on_ready():
