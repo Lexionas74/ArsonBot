@@ -129,4 +129,4 @@ async def unload(ctx, extension):
     client.unload_extension(f"cogs.{extension}")
     await ctx.reply("Unloaded extension!")
 
-client.run("OTUzMDg2OTIwOTAzMjQ1ODI0.Yi_dXQ.JEPkwo0YA51Aeu5nqjtSUkKfT0")
+client.run("OTUzMDg2OTIwOTAzMjQ1ODI0.G4UsJR.dkUUnXiH39giGkl_0R_CKItK7xlyX1cQ-2XzT8")
