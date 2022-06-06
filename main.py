@@ -110,28 +110,4 @@ async def help(ctx):
     view = DropdownView()
     await ctx.send("Choose a category for help!", view=view)
 
-@client.command()
-@commands.is_owner()
-async def reload(ctx: commands.Context, extension: str):
-    client.unload_extension(f"cogs.{extension}")
-    client.load_extension(f"cogs.{extension}")
-    print(f"Unloaded and Reloaded {extension}")
-    await ctx.reply("Reloaded Cog succesfully!")  
-        
-for filename in os.listdir("./cogs"):
-    if filename.endswith(".py"):
-        client.load_extension(f"cogs.{filename[:-3]}")
-        
-@client.command()
-@commands.is_owner()
-async def load(ctx, extension):
-    client.load_extension(f"cogs.{extension}")
-    await ctx.reply("Loaded extension!")
-    
-@client.command()
-@commands.is_owner()
-async def unload(ctx, extension):
-    client.unload_extension(f"cogs.{extension}")
-    await ctx.reply("Unloaded extension!")
-
 client.run(token)
