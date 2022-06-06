@@ -104,7 +104,7 @@ class DropdownView(nextcord.ui.View):
         super().__init__()
         self.add_item(Dropdown())
 
-@client.command(aliases=["h"])
+@client.command()
 async def help(ctx):
     view = DropdownView()
     await ctx.send("Choose a category for help!", view=view)
